@@ -1,0 +1,22 @@
+class TasksController < ApplicationController
+
+	def create
+		user = User.find(params[:user_id])
+		@task = user.tasks.build(task_params)
+
+		respond_to do |format|
+			if @task.save 
+				format.html { redirect_to root_path, notice: "Task added!" }
+				format.js
+			else
+				fotmat.html { render "new" }
+			end
+		end
+	end
+
+	private
+
+	def task_params
+		params.require(:task).permit(:name)
+	end
+end
