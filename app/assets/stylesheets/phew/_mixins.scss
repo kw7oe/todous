@@ -1,0 +1,187 @@
+// Utilities
+@mixin link-color($color, $percentage: 20%) {
+	color: $color;
+	text-decoration: none;
+
+	&:visited {
+		color: $color;
+	}
+
+	&:hover {
+		color: darken($color, $percentage);
+		text-decoration: none;
+	}
+}
+
+@mixin bg-color($color, $background-color, $percentage: 10%) {
+	background-color: $background-color;
+	color: $color;
+
+	@include link-color($color);
+
+	&:hover {
+		color: $color;
+		background-color: darken($background-color, $percentage);
+	}
+}
+
+@mixin border-color($color) {
+	color: $color;	
+	border: 1px solid $color;
+	background-color: white;
+	
+	@include link-color($color);	
+
+	&:hover {
+		color: white;
+		background-color: $color;
+	}
+}
+
+// Link
+@mixin base-link() {
+	cursor: pointer;
+}
+
+// Button
+@mixin base-btn($border-radius: 8px, $border-width: 1px) {
+	@include base-link();
+	display: inline-block;
+	padding: 8px 12px;
+	border-radius: $border-radius;
+	margin-bottom: 24px;
+}
+
+// Label
+@mixin base-label($border-radius: 8px) {
+	display: inline-block;
+	padding: 6px 8px;
+	font-size: 12px;
+	border-radius: $border-radius;
+	font-weight: bold;
+	margin-bottom: 16px;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+// Alert
+@mixin base-alert($border-radius: 8px) {
+	@include base-label($border-radius);
+	display: block;
+	padding: 12px 16px;
+	margin: 16px;
+}
+
+// Form
+@mixin base-text-field {	
+	display: block;	
+	padding: 6px;	
+	width: 100%;
+	font-size: 1.05em;
+}
+
+@mixin box-text-field {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+@mixin line-text-field {	
+	border: 0;	
+	border-bottom: 2px solid $green;
+}
+
+@mixin base-form-group {
+	margin-bottom: 15px;
+
+	label {
+		display: inline-block;
+		margin-bottom: 8px;
+		font-weight: bold;
+	}
+
+	.help-block {
+		font-style: italic;
+		color: #999;
+	}
+}
+
+// Panel
+@mixin base-panel($color, $border-radius: 8px) {
+	display: block;
+	border: 1px solid $color;
+	border-radius: $border-radius;	
+	overflow: auto;
+	margin-bottom: 16px;
+
+	.panel-head {
+		background-color: lighten($color, 40%);
+		border-bottom: 1px solid $color;
+		font-weight: bold;
+		padding: 6px 8px;
+
+		* {
+			margin-bottom: 0;
+		}
+	}
+
+	.panel-body {
+		background-color: white;	
+		padding: 10px 8px;
+	}
+}
+
+// Navigation
+@mixin base-nav($color: #F6F6F6, $dark-color: #8E8E8E) {
+	background-color: $color;
+  margin-bottom: 16px;
+
+  a {
+    color: black;
+  }
+
+  ul {
+    li {
+      text-align: center;
+      padding: 12px 16px;
+      cursor: pointer;
+      background-color: $color;
+
+      &:hover {
+        background-color: darken($color, 10%);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $dark-color;
+      }
+
+    }
+
+  }
+}
+
+@mixin base-nav-header($color: #8E8E8E, $weight: bold) {
+  padding: 12px 16px;
+  font-weight: $weight;
+  text-align: center;
+  border-bottom: 1px solid $color;
+}
+
+@mixin base-dropdown-toggle($color: #8E8E8E, $dark-color: #4C4C4C) {
+	position: absolute;
+  top: 8px;
+  right: 10px;
+  padding: 2px 6px;
+  border: 1px solid $color;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $dark-color;
+  }
+
+  &:hover .dash {
+    background-color: $dark-color;
+  }
+}

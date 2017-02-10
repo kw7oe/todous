@@ -1,0 +1,38 @@
+// Clear
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+// Variable
+$grid-spacing: 3%;
+
+.row {
+	@extend .clearfix;
+	z-index: 1;
+
+	& + & {
+		margin-top: $grid-spacing;
+	}
+}
+
+[class^="col-"] {
+	float: left;
+	padding-right: 6px;
+	padding-left: 6px;
+	margin-bottom: 8px;
+	width: 100%;
+	-webkit-box-sizing:border-box; 
+	-moz-box-sizing:border-box; 
+	box-sizing:border-box;
+}
+
+	
+.margin-1, .margin-2, .margin-3, .margin-4 {
+	margin-left: 0%;
+}
+
+
+
+	

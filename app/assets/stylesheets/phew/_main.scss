@@ -1,0 +1,53 @@
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+.container {
+	max-width: 768px;
+	padding: 12px 15px;
+	margin: 0 auto;
+	margin-bottom: 12px;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.i-link {
+	@include link-color($blue);
+}
+
+.btn {
+	@include base-btn();
+	@include bg-color(white, $blue);
+}
+
+.default-btn {
+	@include border-color($blue);
+}
+
+.alert {
+	@include base-alert();
+}
+
+.notice-alert {
+	@include bg-color(white, $green);
+}
+
+.alert-alert {
+	@include bg-color(white, $red);
+}
+
+
+.form-group {
+	@include base-form-group();
+}
+
+.form-control {
+	@include base-text-field();
+	@include box-text-field();
+}

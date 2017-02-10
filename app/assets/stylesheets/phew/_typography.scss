@@ -1,0 +1,28 @@
+/*========
+Typography
+========*/
+
+a {
+	@include base-link();
+	@include link-color(#808080);
+	font-family: $secondary-font;
+}
+
+// TODO: Add Font Size & Line Height for Heading
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-bottom: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $primary-font;
+}
+
+* {
+	font-family: $secondary-font;
+}
+
+.center-block {
+	text-align: center;
+}
+
