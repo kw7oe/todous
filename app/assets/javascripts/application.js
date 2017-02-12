@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+
+	$(".incompleted_tasks input[type=checkbox]").on("click", function() {
+		$(this).parent("form").submit();
+	});
+});

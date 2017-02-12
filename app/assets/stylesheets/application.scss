@@ -6,6 +6,11 @@
 @import "phew/navigation";
 @import "phew/main";
 @import "pages";
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+*, h1, h2, h3, a {
+	font-family: "Raleway", sans-serif;
+}
 
 .profile {
 	display: flex;
@@ -23,4 +28,53 @@
 
 .right {
 	float: right;
+}
+
+.form-control {
+	@include base-text-field();
+	@include line-text-field();
+
+	font-sze: 18px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.task_lists {	
+	.done {
+		text-decoration: line-through;
+	}
+
+	.incompleted {
+		color: $red;
+	}
+
+	.green {
+		color: $green;
+		border-color: $green;
+	}
+
+	h2 {
+		border-bottom: 2px solid black;
+		padding-bottom: 6px;
+	}
+
+	ol {
+		list-style-position: inside;
+	}
+
+	input[type="checkbox"] {
+		width: 15px;
+	}
+
+	li {
+		font-size: 24px;
+		line-height: 1.8;
+
+		p {
+			flex-grow: 2;
+			margin-bottom: 0px;
+		}
+	}
 }

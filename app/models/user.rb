@@ -5,7 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
   has_many :tasks
-  
+
+  def done_tasks
+    tasks.where(completed: true)
+  end
+
+  def incompleted_tasks
+    tasks.where(completed: false)
+  end
+
+  # MARK: Authentication
   # Override
   def self.new_with_session(params, session) 
 

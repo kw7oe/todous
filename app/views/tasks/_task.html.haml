@@ -1,1 +1,6 @@
-%p= task.name 
+%li.flex-container{id: "#{dom_id(task)}"}
+  %p{class: "#{task.status}"}= task.name 
+  = link_to "remove", [current_user, task], method: :delete, remote: true
+  - unless task.completed
+    = form_tag(done_task_path(task), remote: true) do
+      = check_box_tag :completed

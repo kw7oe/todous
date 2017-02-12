@@ -1,4 +1,17 @@
 - if current_user 
-  = form_for [current_user, Task.new], remote: true do |f|
-    = f.text_field :name, placeholder: "Add Task Here...", class: "form-control"
+
   .task_lists
+
+    .col-6.incompleted_tasks
+      %h2 To Do Tasks
+      %ol
+        = render current_user.incompleted_tasks
+      = form_for [current_user, Task.new], remote: true do |f|
+        = f.text_field :name, placeholder: "Add Task Here...", class: "form-control"
+
+    .col-6.done_tasks
+      %h2.green Completed Task
+      %ol 
+        = render current_user.done_tasks
+  
+  
