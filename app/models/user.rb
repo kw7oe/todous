@@ -14,6 +14,14 @@ class User < ApplicationRecord
     tasks.where(completed: false)
   end
 
+  def done_tasks_count
+    done_tasks.count 
+  end
+
+  def incompleted_tasks_count
+    incompleted_tasks.count
+  end
+
   # MARK: Authentication
   # Override
   def self.new_with_session(params, session) 

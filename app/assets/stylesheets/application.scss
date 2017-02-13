@@ -34,6 +34,8 @@
 	@include base-text-field();
 	@include line-text-field();
 
+	border-color: $red;
+
 	font-sze: 18px;
 
 	&:focus {
@@ -45,6 +47,11 @@
 	.green {
 		color: $green;
 		border-color: $green;
+	}
+
+	.red {
+		color: $red;
+		border-color: $red;
 	}
 
 	h2 {

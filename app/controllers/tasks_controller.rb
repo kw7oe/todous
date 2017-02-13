@@ -1,8 +1,12 @@
 class TasksController < ApplicationController
+	before_action :set_user, only: [:index, :create]
+	before_action :set_task, only: [:done, :destroy]
 
-	def create
-		user = User.find(params[:user_id])
-		@task = user.tasks.build(task_params)
+	def index
+	end
+
+	def create		
+		@task = @user.tasks.build(task_params)
 
 		respond_to do |format|
 			if @task.save 
@@ -15,7 +19,6 @@ class TasksController < ApplicationController
 	end
 
 	def destroy 
-		@task = Task.find(params[:id])
 		@task.destroy
 		respond_to do |format|
 			format.html { redirect_to root_path }
@@ -24,7 +27,6 @@ class TasksController < ApplicationController
 	end
 
 	def done 
-		@task = Task.find(params[:id])
 		@task.done
 		respond_to do |format|
 			format.html { redirect_to root_path }
@@ -33,6 +35,13 @@ class TasksController < ApplicationController
 	end
 	
 	private
+	def set_user 
+		@user = User.find(params[:user_id])
+	end
+
+	def set_task
+		@task = Task.find(params[:id])
+	end
 
 	def task_params
 		params.require(:task).permit(:name)

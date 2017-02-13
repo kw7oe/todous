@@ -1,1 +1,4 @@
+$(".incompleted_tasks_count").text("(<%= user.incompleted_tasks_count %>)")
+$(".done_tasks_count").text("(<%= user.done_tasks_count %>)")
 $("li#<%= dom_id(@task) %>").remove()
+$(".tasks_count").text(<%= user.tasks.count %>)

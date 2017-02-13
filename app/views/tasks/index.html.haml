@@ -1,0 +1,24 @@
+= render_navigation_bar
+
+.task_lists
+  .row 
+    .col-6.incompleted_tasks
+      %h2.red 
+        To Do Tasks 
+        %span.incompleted_tasks_count (#{user.incompleted_tasks_count})
+      %ol
+        = render user.incompleted_tasks
+      = form_for [user, Task.new], remote: true do |f|
+        = f.text_field :name, placeholder: "Add Task Here...", class: "form-control"
+
+    .col-6.done_tasks
+      %h2.green 
+        Completed Tasks
+        %span.done_tasks_count (#{user.done_tasks_count})
+      %ol 
+        = render user.done_tasks
+
+.center-block
+  %h2 
+    Total Tasks: 
+    %span.tasks_count #{user.tasks.count}

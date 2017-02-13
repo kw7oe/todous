@@ -1,2 +1,4 @@
+$(".incompleted_tasks_count").text("(<%= user.incompleted_tasks_count %>)")
 $(".incompleted_tasks ol").append("<%= j render @task %>");
 $(".new_task input[type=text]").val("")
+$(".tasks_count").text(<%= user.tasks.count %>)
