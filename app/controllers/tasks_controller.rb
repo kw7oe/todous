@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 	end
 
 	def destroy 
-		@task = Task.find(params[:task_id])
+		@task = Task.find(params[:id])
 		@task.destroy
 		respond_to do |format|
 			format.html { redirect_to root_path }

@@ -16,8 +16,8 @@
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {
-
-	$(".incompleted_tasks input[type=checkbox]").on("click", function() {
+	$(".incompleted_tasks").on("click", "input[type=checkbox]", function(e) {
+		e.preventDefault();
 		$(this).parent("form").submit();
 	});
 });

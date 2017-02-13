@@ -42,14 +42,6 @@
 }
 
 .task_lists {	
-	.done {
-		text-decoration: line-through;
-	}
-
-	.incompleted {
-		color: $red;
-	}
-
 	.green {
 		color: $green;
 		border-color: $green;
