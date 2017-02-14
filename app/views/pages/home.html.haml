@@ -1,7 +1,10 @@
 - unless current_user 
   .center
     %h1 Todous
-    = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
+    .action_link
+      = link_to "Sign Up", new_user_registration_path
+      = link_to "Sign In", new_user_session_path
+      /= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
 - else 
   = render template: "tasks/index"
 

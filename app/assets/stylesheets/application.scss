@@ -34,12 +34,26 @@
 	@include base-text-field();
 	@include line-text-field();
 
-	border-color: $red;
-
 	font-sze: 18px;
-
+	border-color: $blue;
 	&:focus {
 		outline: none;
+	}
+}
+
+.add_task_field {
+	@extend .form-control;
+
+	border-color: $red;
+}
+
+.action_link {
+	a:after {
+		content: "  •"
+	}
+
+	a:last-child:after {
+		content: ""
 	}
 }
 

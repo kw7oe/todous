@@ -13,5 +13,5 @@
     - if current_user        
       %li
         .profile
-          %span Logged in as #{current_user.name}
-          %img.picture{:src => current_user.image} 
+          %span= link_to "#{user.name}", user
+          %img.picture{:src => user.image} 

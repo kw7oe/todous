@@ -9,7 +9,7 @@
       %ol
         = render user.incompleted_tasks
       = form_for [user, Task.new], remote: true do |f|
-        = f.text_field :name, placeholder: "Add Task Here...", class: "form-control"
+        = f.text_field :name, placeholder: "Add Task Here...", class: "add_task_field"
 
     .col-6.done_tasks
       %h2.green 
