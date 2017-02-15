@@ -1,2 +1,7 @@
 %h1= @user.name
 %p= @user.email
+
+- if @user.image?
+  %img{src: @user.image}
+- else 
+  = link_to "Add Profile Picture", edit_picture_user_path(@user)

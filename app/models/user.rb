@@ -1,10 +1,12 @@
 class User < ApplicationRecord
+  mount_uploader :image, PictureUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 #         :omniauthable, :omniauth_providers => [:facebook]
   has_many :tasks
+  
 
   def done_tasks
     tasks.where(completed: true)

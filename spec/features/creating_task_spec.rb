@@ -10,7 +10,7 @@ RSpec.feature "User can create tasks" do
 
 	scenario "with valid attributes", js: true do 
 		fill_in "task[name]", with: "Apple"
-		find("input.form-control").send_keys :enter
+		find("input.add_task_field").send_keys :enter
 
 		expect(page).to have_content "Apple"
 	end
