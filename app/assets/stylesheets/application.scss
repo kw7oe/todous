@@ -6,24 +6,12 @@
 @import "phew/navigation";
 @import "phew/main";
 @import "pages";
+@import "users";
+@import "tasks";
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
 *, h1, h2, h3, a {
 	font-family: "Raleway", sans-serif;
-}
-
-.profile {
-	display: flex;
-	align-items: center;
-
-	p {
-		margin: 0;
-	}
-
-	.picture {
-		margin-left: 6px;
-		width: 20px;
-	}
 }
 
 .right {
@@ -41,12 +29,6 @@
 	}
 }
 
-.add_task_field {
-	@extend .form-control;
-
-	border-color: $red;
-}
-
 .action_link {
 	a:after {
 		content: "  •"
@@ -57,37 +39,3 @@
 	}
 }
 
-.task_lists {	
-	.green {
-		color: $green;
-		border-color: $green;
-	}
-
-	.red {
-		color: $red;
-		border-color: $red;
-	}
-
-	h2 {
-		border-bottom: 2px solid black;
-		padding-bottom: 6px;
-	}
-
-	ol {
-		list-style-position: inside;
-	}
-
-	input[type="checkbox"] {
-		width: 15px;
-	}
-
-	li {
-		font-size: 24px;
-		line-height: 1.8;
-
-		p {
-			flex-grow: 2;
-			margin-bottom: 0px;
-		}
-	}
-}

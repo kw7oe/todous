@@ -1,7 +1,20 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit_picture, :update_picture]
+	before_action :set_user, only: [:show, :update, :edit_picture, :update_picture]
   
   def show
+  end
+
+  def update
+
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user }
+        format.json { render json: { msg: "Success" } }
+      else
+        format.html { redirect_to @user }
+        format.json { render json: { msg: "Error" } }
+      end
+    end
   end
 
   def edit_picture
@@ -21,6 +34,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:image)
+    params.require(:user).permit(:image, :name, :email)
   end
 end

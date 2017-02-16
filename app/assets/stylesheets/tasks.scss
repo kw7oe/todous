@@ -1,3 +1,51 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.add_task_field {
+	@extend .form-control;
+
+	border-color: $red;
+}
+
+.task_lists {	
+	.green {
+		color: $green;
+		border-color: $green;
+	}
+
+	a {
+		margin-right: 6px;
+
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+
+	.red {
+		color: $red;
+		border-color: $red;
+	}
+
+	h2 {
+		border-bottom: 2px solid black;
+		padding-bottom: 6px;
+	}
+
+	ol {
+		list-style-position: inside;
+	}
+
+	input[type="checkbox"] {
+	}
+
+	li {
+		font-size: 24px;
+		line-height: 1.8;
+
+		p {
+			flex-grow: 2;
+			margin-bottom: 0px;
+		}
+	}
+}
