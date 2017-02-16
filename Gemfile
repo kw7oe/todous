@@ -38,7 +38,8 @@ gem "haml-rails"
 gem "react-rails"
 gem "devise"
 gem "omniauth-facebook"
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 0.9'
+gem 'carrierwave-dropbox'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :add_picture, :update_picture]
+	before_action :set_user, only: [:show, :edit_picture, :update_picture]
   
   def show
   end
 
-  def add_picture
+  def edit_picture
   end
 
   def update_picture
