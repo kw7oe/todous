@@ -37,11 +37,15 @@ class TextField extends React.Component {
 		const CustomTag = this.props.tag
 
 		return(
-			<CustomTag>
+			<CustomTag className = "relative">
 			<input className="form-control"
 			  type='text'
 			  defaultValue={this.props.value}
-			  onKeyPress={this.handleChange} />
+			  onKeyPress={this.handleChange}>
+			</input>
+			<a className="close-field"
+				onClick={this.handleClick}>
+			✕</a>
 			</CustomTag>
 		)
 	}
@@ -82,7 +86,6 @@ class Profile extends React.Component {
 				}
 			},
 			success: function(data) {
-				alert("Success")
 				this.setState({[key]: value})
 			}.bind(this)
 		})

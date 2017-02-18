@@ -23,4 +23,15 @@ document.addEventListener("turbolinks:load", function() {
 		e.preventDefault();
 		$(this).parent("form").submit();
 	});
+	$("[data-behavior~=close_modal]").on("click", function(event) {
+		event.preventDefault()
+		close(event);
+	})
 });
+
+function close(event) {
+	var target = $(event.target).parent()
+	target.fadeOut(600, function(e) {
+		$(this).remove()
+	})
+}

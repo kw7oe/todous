@@ -7,6 +7,7 @@ class User < ApplicationRecord
 #         :omniauthable, :omniauth_providers => [:facebook]
   has_many :tasks
   
+  
 
   def done_tasks
     tasks.where(completed: true)

@@ -14,9 +14,31 @@
 	font-family: "Raleway", sans-serif;
 }
 
+.relative {
+	position: relative;
+}
+
+.close {
+	position: absolute;
+	right: 2%;
+
+	&:after {
+		content: '✕';			
+		color: white;
+	}
+}		
+
+.close-field {
+	position: absolute;
+	right: 8px;
+	top: 15%;
+}
+
 .right {
 	float: right;
 }
+
+
 
 .form-control {
 	@include base-text-field();
