@@ -1,0 +1,11 @@
+.col-10.margin-1.incompleted_tasks
+  %header.task_header.center-block
+    %h2.flex-2
+      To Do Tasks 
+      %span.incompleted_tasks_count (#{user.incompleted_tasks_count})
+    = link_to "Graph", tasks_graph_index_path
+
+  %ol
+    = render user.incompleted_tasks
+  = form_for [user, Task.new], remote: true do |f|
+    = f.text_field :name, placeholder: "Add Task Here...", class: "add_task_field"

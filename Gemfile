@@ -40,6 +40,7 @@ gem "devise"
 gem "omniauth-facebook"
 gem 'carrierwave', '~> 0.9'
 gem 'carrierwave-dropbox'
+gem 'chartjs-ror'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

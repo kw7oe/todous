@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :user
-	scope :this_week, -> { where("done_at >= ?", 7.days.ago) }
+	scope :this_week, -> { where("done_at >= ?", 30.days.ago) }
 	
   def done
   	update_columns(completed: true)

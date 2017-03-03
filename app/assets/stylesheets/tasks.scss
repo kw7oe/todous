@@ -8,6 +8,14 @@
 	border-color: $red;
 }
 
+.task_header {
+
+	h2, p {
+		display: inline-block;
+	}
+	
+}
+
 .task_lists {	
 	.green {
 		color: $green;
@@ -28,8 +36,7 @@
 	}
 
 	h2 {
-		border-bottom: 2px solid black;
-		padding-bottom: 6px;
+		text-transform: uppercase;
 	}
 
 	ol {

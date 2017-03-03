@@ -1,0 +1,6 @@
+.done_tasks
+  %h2.green 
+    Completed Tasks
+    %span.done_tasks_count (#{user.done_tasks_count})
+  %ol 
+    = render user.done_tasks
