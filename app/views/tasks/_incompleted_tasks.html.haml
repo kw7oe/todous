@@ -3,7 +3,7 @@
     %h2.flex-2
       To Do Tasks 
       %span.incompleted_tasks_count (#{user.incompleted_tasks_count})
-    = link_to "Graph", tasks_graph_index_path
+    = link_to "Graph", tasks_graph_index_path("month")
 
   %ol
     = render user.incompleted_tasks

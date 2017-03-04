@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |i|
-	rand(1..10).times do |j|
-		Task.create(name: "Apple#{i}-#{i}", user_id: 1, done_at: j.days.ago, completed: true)
+50.times do |i|
+	rand(1...10).times do |j|
+		Task.create(name: "Apple#{i}-#{i}", user_id: 1, done_at: i.days.ago, completed: true)
 	end
 end 

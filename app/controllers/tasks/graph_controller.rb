@@ -1,9 +1,8 @@
 class Tasks::GraphController < ApplicationController
-  
+
   def index
-  	hash = Task.this_week.group("date(done_at)").count
-  	label = hash.map { |k, v| k.strftime("%A") }
-  	data = hash.map {|k, v| v }
+  	hash = Tasks::GraphHelper.data_for(params[:format])
+  	label = hash[:label]
   	@data = {
 		  labels: label,
 		  datasets: [
@@ -11,7 +10,7 @@ class Tasks::GraphController < ApplicationController
 		        label: "Task",
 		        background_color: "rgba(220,220,220,0.2)",
 		        border_color: "rgba(220,220,220,1)",
-		        data: data
+		        data: hash[:data]
 		    }
 		  ]
 		}
@@ -21,5 +20,4 @@ class Tasks::GraphController < ApplicationController
 				height: 1
   	}
   end
-
 end
