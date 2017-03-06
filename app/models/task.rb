@@ -2,8 +2,9 @@ class Task < ApplicationRecord
   belongs_to :user
 
  
-  def self.done_from(range) 
-    where("done_at >= ?", range)
+  def self.done_for(date) 
+    # Should be change to a range.
+    where("done_at >= ?", date)
   end
 
   def done
