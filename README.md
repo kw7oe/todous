@@ -1,24 +1,20 @@
-# README
+## Introduction
+_Coming Soon_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Use Cases
+_Coming Soon_
 
-Things you may want to cover:
+## Features
+_Coming Soon_
 
-* Ruby version
+## Limitation
+_Coming Soon_
 
-* System dependencies
+## Resources
 
-* Configuration
+* [Chart.js](http://www.chartjs.org)
+* [chartjs-ror](https://github.com/airblade/chartjs-ror)
+* [carrierwave](https://github.com/carrierwaveuploader/carrierwave)
+* [carrierwave-dropbox](https://github.com/robin850/carrierwave-dropbox)
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

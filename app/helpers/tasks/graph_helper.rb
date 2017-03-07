@@ -1,17 +1,17 @@
 module Tasks::GraphHelper
 
   # Public API
-	def self.data_for(option)
-		start_date, end_date = get_date_range_for(option)
-  	label = get_label_for(option, (start_date..end_date))
-  	data =  get_data_for(option, start_date, label)
-  	return {
-  		label: label,
-  		data: data
-  	}
-	end
+  def self.data_for(option)
+    start_date, end_date = get_date_range_for(option)
+    label = get_label_for(option, (start_date..end_date))
+    data =  get_data_for(option, start_date, label)
+    return {
+      label: label,
+      data: data
+    }
+  end
 
-	private
+  private
   def self.get_label_for(option, range)
     if option == "year"
       return [
@@ -44,18 +44,18 @@ module Tasks::GraphHelper
   end
 
   # Helper Methods
-	def self.group_query_for(option) 		
-		return "date_trunc('month', done_at)" if option == "year" 
-		return "date(done_at)" # Week
-	end
+  def self.group_query_for(option)    
+    return "date_trunc('month', done_at)" if option == "year" 
+    return "date(done_at)" # Week
+  end
 
-	def self.date_format_for(option)
-		return "%A" if option == "week"
-		return "%d/%m/%y"	if option == "month"
+  def self.date_format_for(option)
+    return "%A" if option == "week"
+    return "%d/%m/%y" if option == "month"
     return "%B" # Year
-	end
+  end
 
-	def self.get_date_range_for(option)
+  def self.get_date_range_for(option)
     date = Date.today
     return date.get_start_and_end_date(option)    
   end

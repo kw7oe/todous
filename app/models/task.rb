@@ -8,11 +8,11 @@ class Task < ApplicationRecord
   end
 
   def done
-  	update_columns(completed: true)
-  	update_columns(done_at: DateTime.current)
+    update_columns(completed: true)
+    update_columns(done_at: DateTime.current)
   end
 
   def status 
-  	completed ? "done" : "incompleted"
+    completed ? "done" : "incompleted"
   end
 end
