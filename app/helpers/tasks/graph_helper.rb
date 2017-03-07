@@ -1,21 +1,10 @@
 module Tasks::GraphHelper
 
+  # Public API
 	def self.data_for(option)
 		start_date, end_date = get_date_range_for(option)
-	  array = Task.done_for(start_date).group("date(done_at)").count.sort
-  	puts array
-  	# Refactor needed
-  	label = (start_date..end_date).map { |date| date.strftime(date_for(option)) }
-  	data =  (start_date..end_date).each_with_index.map do |date, index| 
-  		if index < array.length
-  			puts "Index: #{index} Date: #{date}"
-  			puts "Volumn: #{array[index][1]}"
-  			array[index][1] 
-  		else 
-  			0
-  		end
-  	end
-  	puts data
+  	label = get_label_for(option, (start_date..end_date))
+  	data =  get_data_for(option, start_date, label)
   	return {
   		label: label,
   		data: data
@@ -23,29 +12,60 @@ module Tasks::GraphHelper
 	end
 
 	private
+  def self.get_label_for(option, range)
+    if option == "year"
+      return [
+        "January", 
+        "February", 
+        "March", 
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ]
+    end
+    return range.map { |date| date.strftime(date_format_for(option)) }
+  end
+
+  def self.get_data_for(option, start_date, label)
+    array = Task.done_for(start_date).group(group_query_for(option)).count.sort   
+    return label.each_with_index.map do |l, index| 
+      if index < array.length
+        array[index][1] 
+      else 
+        0
+      end
+    end
+  end
+
+  # Helper Methods
 	def self.group_query_for(option) 		
-		return "date(done_at)" if option == "week"
-		return "date_trunc('week', done_at)" # Month
+		return "date_trunc('month', done_at)" if option == "year" 
+		return "date(done_at)" # Week
 	end
 
-	def self.date_for(option)
-		return "%A-%d" if option == "week"
-		return "%d/%m/%y"	# Month
+	def self.date_format_for(option)
+		return "%A" if option == "week"
+		return "%d/%m/%y"	if option == "month"
+    return "%B" # Year
 	end
 
 	def self.get_date_range_for(option)
     date = Date.today
-    start_date, end_date = Date.new
-    case option         
-      when "month"
-      	# Can be refactor 
-        start_date = date.beginning_of_month
-        end_date = start_date.end_of_month
-      else 
-        start_date = date.beginning_of_week # Week
-        end_date = date.end_of_week
-    end
+    return date.get_start_and_end_date(option)    
+  end
+end
+
+# Monkey Patching for Date Class
+class Date 
+  def get_start_and_end_date(option)
+    start_date = self.public_send("beginning_of_#{option}")
+    end_date = self.public_send("end_of_#{option}")
     return [start_date, end_date]
   end
-
 end

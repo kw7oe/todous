@@ -1,3 +1,10 @@
 %h1 Graph
+%ul
+  %li 
+    =link_to "Week", tasks_graph_index_path({option: "week"})
+  %li 
+    =link_to "Month", tasks_graph_index_path({option: "month"})
+  %li 
+    =link_to "Year", tasks_graph_index_path({option: "year"})
 = bar_chart(@data, @options)
 
