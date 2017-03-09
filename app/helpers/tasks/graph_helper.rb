@@ -1,8 +1,8 @@
 module Tasks::GraphHelper
 
   # Public API
-  def self.data_for(option)
-    start_date, end_date = get_date_range_for(option)
+  def self.data_for(option, period)
+    start_date, end_date = get_date_range_for(option, period)
     label = get_label_for(option, (start_date..end_date))
     data =  get_data_for(option, start_date, label)
     return {
@@ -55,8 +55,13 @@ module Tasks::GraphHelper
     return "%B" # Year
   end
 
-  def self.get_date_range_for(option)
+  def self.get_date_range_for(option, period)
     date = Date.today
+    if period == "previous" 
+      date -= 7 if option == "week"
+      date -= 31 if option == "month"
+      date -= 366 if option == "year"
+    end
     return date.get_start_and_end_date(option)    
   end
 end
@@ -68,4 +73,5 @@ class Date
     end_date = self.public_send("end_of_#{option}")
     return [start_date, end_date]
   end
+
 end

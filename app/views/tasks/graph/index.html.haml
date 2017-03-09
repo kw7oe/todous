@@ -1,10 +1,13 @@
 %h1 Graph
-%ul
-  %li 
-    =link_to "Week", tasks_graph_index_path({option: "week"})
-  %li 
-    =link_to "Month", tasks_graph_index_path({option: "month"})
-  %li 
-    =link_to "Year", tasks_graph_index_path({option: "year"})
+
+%ul.graph-option-control
+  %h3 Options:
+  =graph_link_to "week"
+  =graph_link_to "month"
+  =graph_link_to "year"
+  =graph_link_to "previous week"
+  =graph_link_to "previous month"
+  =graph_link_to "previous year"
+  
 = bar_chart(@data, @options)
 

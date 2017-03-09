@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.graph-option-control {
+
+	h3 {
+		display: inline-block;
+	}
+
+	li {
+		border: 1px solid #B3B3B3;
+		border-radius: 3px;
+		list-style-type: none;
+		display: inline-block;
+		padding: 6px 8px;
+
+		&.active {
+			background: #B3B3B3;
+			color: white;
+		}
+	}
+}
+
 .add_task_field {
 	@extend .form-control;
 

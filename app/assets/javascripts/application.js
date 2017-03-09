@@ -25,9 +25,9 @@ document.addEventListener("turbolinks:load", function() {
 		$(this).parent("form").submit();
 	});
 	$("[data-behavior~=close_modal]").on("click", function(event) {
-		event.preventDefault()
+		event.preventDefault();
 		close(event);
-	})
+	});
 });
 
 function close(event) {

@@ -1,7 +1,7 @@
 class Tasks::GraphController < ApplicationController
 
   def index
-    hash = Tasks::GraphHelper.data_for(params[:option])
+    hash = Tasks::GraphHelper.data_for(params[:option], params[:period])
     label = hash[:label]
     @data = {
       labels: label,
