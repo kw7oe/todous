@@ -7,9 +7,11 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = yield :navigation_bar       
-    .container
-      - flash.each do |key, msg|
-        %div{:class => "relative alert #{key}-alert"}
-          = msg 
-          %a{:class => "close", "data-behavior" => "close_modal"}
-      = yield
+    = yield :sidebar
+    %div{:class => ("margin-2" if content_for?(:sidebar))}
+      .container
+        - flash.each do |key, msg|
+          %div{:class => "relative alert #{key}-alert"}
+            = msg 
+            %a{:class => "close", "data-behavior" => "close_modal"}
+        = yield

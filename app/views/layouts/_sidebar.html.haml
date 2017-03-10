@@ -1,0 +1,23 @@
+.sidebar.col-2
+  %ul.tasks
+    %li.header
+      Tasks
+    %li 
+      =link_to "All"
+    %li 
+      =link_to "To Do"
+    %li 
+      =link_to "Done"
+  %ul.stats
+    %li.header
+      Stats
+    =graph_link_to "week"
+    =graph_link_to "month"
+    =graph_link_to "year"
+  %ul.users
+    %li.header
+      Users
+    %li 
+      =link_to "View Profile"
+    %li 
+      =link_to "Update Profile Picture"

@@ -5,6 +5,7 @@
 - if @user.image?
   .profile_picture.col-4
     %img{src: @user.image}
-    = link_to "Change Picture", edit_picture_user_path(@user)
-- else 
+    - if current_user
+      = link_to "Change Picture", edit_picture_user_path(@user)
+- elsif current_user
   = link_to "Add Profile Picture", edit_picture_user_path(@user)

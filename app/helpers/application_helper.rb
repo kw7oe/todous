@@ -6,6 +6,12 @@ module ApplicationHelper
     end
   end
 
+  def render_sidebar
+    content_for :sidebar do 
+      render "layouts/sidebar"
+    end
+  end
+  
   def user 
     @user || current_user
   end

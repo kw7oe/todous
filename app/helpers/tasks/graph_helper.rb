@@ -1,7 +1,7 @@
 module Tasks::GraphHelper
-
+  
   # Public API
-  def self.data_for(option, period)
+  def data_for(option, period)
     start_date, end_date = get_date_range_for(option, period)
     label = get_label_for(option, (start_date..end_date))
     data =  get_data_for(option, start_date, label)
@@ -12,7 +12,7 @@ module Tasks::GraphHelper
   end
 
   private
-  def self.get_label_for(option, range)
+  def get_label_for(option, range)
     if option == "year"
       return [
         "January", 
@@ -32,8 +32,8 @@ module Tasks::GraphHelper
     return range.map { |date| date.strftime(date_format_for(option)) }
   end
 
-  def self.get_data_for(option, start_date, label)
-    array = Task.done_for(start_date).group(group_query_for(option)).count.sort   
+  def get_data_for(option, start_date, label)
+    array = current_user.done_for(start_date).group(group_query_for(option)).count.sort   
     return label.each_with_index.map do |l, index| 
       if index < array.length
         array[index][1] 
@@ -44,18 +44,18 @@ module Tasks::GraphHelper
   end
 
   # Helper Methods
-  def self.group_query_for(option)    
+  def group_query_for(option)    
     return "date_trunc('month', done_at)" if option == "year" 
     return "date(done_at)" # Week
   end
 
-  def self.date_format_for(option)
+  def date_format_for(option)
     return "%A" if option == "week"
     return "%d/%m/%y" if option == "month"
     return "%B" # Year
   end
 
-  def self.get_date_range_for(option, period)
+  def get_date_range_for(option, period)
     date = Date.today
     if period == "previous" 
       date -= 7 if option == "week"

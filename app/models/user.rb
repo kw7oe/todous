@@ -6,8 +6,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 #         :omniauthable, :omniauth_providers => [:facebook]
   has_many :tasks
-  
-  
+
+  def done_for(date) 
+    # Should be change to a range.
+    self.tasks.where("done_at >= ?", date)
+  end
 
   def done_tasks
     tasks.where(completed: true)
