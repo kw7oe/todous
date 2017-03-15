@@ -1,6 +1,8 @@
-.done_tasks
-  %h2.green 
-    Completed Tasks
-    %span.done_tasks_count (#{user.done_tasks_count})
+.col-10.margin-1.completed_tasks
+  %header.task_header.center-block
+    %h2.flex-2.green
+      Completed Tasks
+      %span.done_tasks_count (#{user.done_tasks_count})
+    = link_to "Graph", tasks_graph_index_path({option: "week", period: "current"})
   %ol 
     = render user.done_tasks

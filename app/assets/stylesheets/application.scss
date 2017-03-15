@@ -10,8 +10,36 @@
 @import "tasks";
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
-*, h1, h2, h3, a {
-	font-family: "Raleway", sans-serif;
+
+// Sidebar
+.custom_sidebar {
+	ul {		
+		background: #243B55;
+		
+		header {
+			background: #141E30; /* fallback for old browsers */
+			background: -webkit-linear-gradient(to top, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to top, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+		}		
+	}
+
+	li {
+		transition: 0.15s;
+		&:hover {			
+			background: darken(#243B55, 10%);
+			border-left: 5px solid #66FFCC;
+		}
+	}
+
+	a {
+		color: $light-text-color;
+		font-family: $secondary-font;
+		font-weight: 400;
+	}
+}
+
+h1, h2, h3 {
+	font-family: $secondary-font;
 }
 
 .relative {
@@ -40,13 +68,6 @@
 
 .flex-2 {
 	flex-grow: 2;
-}
-
-.push_down {
-	position: fixed;
-	left: 50%;
-	bottom: 5%;
-	transform: translate(-50%, 0%);
 }
 
 .form-control {

@@ -21,22 +21,15 @@ Container
 		font-weight: bold;
 		
 		ul {
-			.header {
+			header {
 				background-color: darken(#2A3F54, 10%);
-				font-size: 1.2em;
-
-				&:hover {
-					background-color: darken(#2A3F54, 10%);
-				}
+				font-size: 16px;
 			}
 
-			li {
+			header, li {
 				padding: 12px 16px;
 				cursor: pointer;
-
-				&:hover {
-					background-color: darken(#2A3F54, 10%);
-				}
+				font-size: 13px;
 			}
 		}
 	}

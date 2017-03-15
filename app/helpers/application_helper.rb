@@ -1,5 +1,10 @@
 module ApplicationHelper
+  
+  def user 
+    @user || current_user
+  end
 
+  # View Helper
   def render_navigation_bar
     content_for :navigation_bar do 
       render "layouts/navigation_bar" 
@@ -11,12 +16,15 @@ module ApplicationHelper
       render "layouts/sidebar"
     end
   end
-  
-  def user 
-    @user || current_user
+
+  def tasks_link_to(string) 
+    option = string.downcase.gsub(" ", "")
+    params = { "option": option }
+    link_to user_tasks_path(user, params) do 
+      content_tag(:li) { string }
+    end
   end
 
-  # View Helper
   def graph_link_to(string)
     title = string.titleize
     array = string.split(" ")
@@ -26,13 +34,14 @@ module ApplicationHelper
       option = array[1]
       period = array[0]
     end
-    class_name = get_class_name(option, period)    
-    content_tag(:li, class: class_name) do 
-      link_to title, tasks_graph_index_path({
+    class_name = get_class_name(option, period)
+    params = {
         "option": option,
         "period": period,
-      })
-    end 
+    }
+    link_to tasks_graph_index_path(params) do     
+      content_tag(:li, class: class_name) { title }
+    end
   end
 
   private 

@@ -3,13 +3,6 @@ To do list is a very simple web application one can made. The logic behind is pr
 
 However, in this project, there's a few things I wish to practice. I have always love how those productivity apps allow users to visualise their progress in graph. So, one of my primary goal in developing this application is to implement this feature.
 
-## Use Cases
-1. Visitor can login and sign up in the home page.
-2. Visitor can add tasks.
-3. Visitor can mark task as done.
-4. Visitor can remove tasks.
-5. __Visitor can view their progress in graph.__
-
 ## Features
 1. Graph _(Yes, I like graphs a lot)_
 	* The graph is plotted using [Chart.js](http://www.chartjs.org).
@@ -26,9 +19,10 @@ However, in this project, there's a few things I wish to practice. I have always
 
 - [X] User is able to view their progress in graph.
 - [ ] User is able to choose what type of graph to be plotted.
-- [ ] Sidebars.
+- [X] Sidebars.
 - [ ] Beautiful and Clean UI. _(Beauty is subjective)_
 - [ ] Proper error Handling.
+- [ ] Add in Pagination for viewing tasks.
 
 ## Resources
 

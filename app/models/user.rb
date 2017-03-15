@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :tasks
 
   def done_for(date) 
-    # Should be change to a range.
     self.tasks.where("done_at >= ?", date)
   end
 

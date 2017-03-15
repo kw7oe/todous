@@ -4,6 +4,10 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @render_path = "tasks/todo_tasks"
+    if params[:option] == "done" 
+      @render_path = "tasks/done_tasks"
+    end
   end
 
   def create    
