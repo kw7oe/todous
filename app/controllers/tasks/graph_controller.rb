@@ -9,9 +9,9 @@ class Tasks::GraphController < ApplicationController
       labels: label,
       datasets: [
         {
-            label: "Tasks Done",
-            background_color: "rgba(220,220,220,0.2)",
-            border_color: "rgba(220,220,220,1)",
+            label: "Tasks",
+            backgroundColor: "rgba(20,87,20,1)",
+            borderColor: "rgba(20,87,20,1)",
             data: hash[:data]
         }
       ]

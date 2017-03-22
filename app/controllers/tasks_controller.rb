@@ -5,7 +5,9 @@ class TasksController < ApplicationController
 
   def index
     @render_path = "tasks/todo_tasks"
-    if params[:option] == "done" 
+    @tasks = current_user.incompleted_tasks.paginate(:page => params[:page]) 
+    if params[:option] == "done"
+      @tasks = current_user.done_tasks.paginate(:page => params[:page])
       @render_path = "tasks/done_tasks"
     end
   end

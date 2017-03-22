@@ -41,6 +41,7 @@ gem "omniauth-facebook"
 gem 'carrierwave', '~> 0.9'
 gem 'carrierwave-dropbox'
 gem 'chartjs-ror'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

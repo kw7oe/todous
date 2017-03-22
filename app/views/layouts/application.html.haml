@@ -10,7 +10,7 @@
     = yield :navigation_bar       
     = yield :sidebar
     %div{:class => ("margin-2" if content_for?(:sidebar))}
-      .container
+      .container.center-ver
         - flash.each do |key, msg|
           %div{:class => "relative alert #{key}-alert"}
             = msg 

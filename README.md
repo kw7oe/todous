@@ -6,7 +6,7 @@ However, in this project, there's a few things I wish to practice. I have always
 ## Features
 1. Graph _(Yes, I like graphs a lot)_
 	* The graph is plotted using [Chart.js](http://www.chartjs.org).
-	* With [chartjs-ror](https://github.com/airblade/chartjs-ror) gem, the chart is rendered with the helper method of `= bar_chart(@data, @options)` in Haml _(`<%= bar_chart(@data, @options) %>` in erb)_.
+	* With [chartjs-ror](https://github.com/airblade/chartjs-ror) gem, the chart is rendered with the helper method of `bar_chart(@data, @options)`.
 	* `Tasks::GraphController` is responsible for handling related request.	
 	* `Tasks::GraphHelper` is responsible for handling the data required by `Chart.js`.
 2. Sidebars _(Not sure if this considered as a features)_
@@ -22,7 +22,7 @@ However, in this project, there's a few things I wish to practice. I have always
 - [X] Sidebars.
 - [ ] Beautiful and Clean UI. _(Beauty is subjective)_
 - [ ] Proper error Handling.
-- [ ] Add in Pagination for viewing tasks.
+- [X] Add in Pagination for viewing tasks.
 
 ## Resources
 

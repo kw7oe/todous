@@ -3,6 +3,7 @@
     %h2.flex-2.green
       Completed Tasks
       %span.done_tasks_count (#{user.done_tasks_count})
-    = link_to "Graph", tasks_graph_index_path({option: "week", period: "current"})
   %ol 
-    = render user.done_tasks
+    = render @tasks
+  .center-block
+    = will_paginate @tasks
