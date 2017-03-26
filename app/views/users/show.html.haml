@@ -1,11 +1,12 @@
-%h1.center-block Profile
+.box
+  %h1.center-block Profile
 
-= react_component("Profile", object: @user)
+  = react_component("Profile", object: @user)
 
-- if @user.image?
-  .profile_picture.col-4
-    %img{src: @user.image}
-    - if current_user
-      = link_to "Change Picture", edit_picture_user_path(@user)
-- elsif current_user
-  = link_to "Add Profile Picture", edit_picture_user_path(@user)
+  - if @user.image?
+    .profile_picture.col-4
+      %img{src: @user.image}
+      - if current_user
+        = link_to "Change Picture", edit_picture_user_path(@user)
+  - elsif current_user
+    = link_to "Add Profile Picture", edit_picture_user_path(@user)

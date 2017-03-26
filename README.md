@@ -20,7 +20,7 @@ However, in this project, there's a few things I wish to practice. I have always
 - [X] User is able to view their progress in graph.
 - [ ] User is able to choose what type of graph to be plotted.
 - [X] Sidebars.
-- [ ] Beautiful and Clean UI. _(Beauty is subjective)_
+- [X] Beautiful and Clean UI. _(Beauty is subjective)_
 - [ ] Proper error Handling.
 - [X] Add in Pagination for viewing tasks.
 

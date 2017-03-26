@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :edit_picture, :update_picture]
+  before_action :authenticate_user!
   
   def show
   end

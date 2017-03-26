@@ -5,7 +5,6 @@
 @import "phew/typography";
 @import "phew/navigation";
 @import "phew/main";
-@import "pages";
 @import "users";
 @import "tasks";
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
@@ -14,6 +13,28 @@
 .center-ver {
 	padding-top: 48px;
 }
+
+body {
+	background-color: #F6F6F6;
+}
+
+.box {
+	background: white;
+	border-radius: 4px;
+	padding: 24px 36px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+	color: #4C4C4C;
+
+	a {
+		color: #808080;
+
+		&:hover {
+			color: #333333;
+		}
+	}
+}
+
 // Sidebar
 .custom_sidebar {
 	ul {		
@@ -79,6 +100,7 @@ h1, h2, h3 {
 
 	font-sze: 18px;
 	border-color: $blue;
+	background: rgba(0,0,0,0);
 	&:focus {
 		outline: none;
 	}

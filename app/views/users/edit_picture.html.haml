@@ -1,7 +1,8 @@
-%h1.center-block Add Profile Picture
-= form_for(@user, url: {action: "update_picture"}, multipart: true) do |f|
-  .form-group
-    = f.label :image, "Profile Picture"
-    = f.file_field :image
-	
-  = f.submit "Upload", class: "btn default-btn"
+.box
+  %h1.center-block Add Profile Picture
+  = form_for(@user, url: {action: "update_picture"}, multipart: true) do |f|
+    .form-group
+      = f.label :image, "Profile Picture"
+      = f.file_field :image
+  	
+    = f.submit "Upload", class: "btn"
