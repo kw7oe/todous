@@ -1,13 +1,14 @@
 %h1 Stats
 
-%ul.graph-option-control
-  %h3 Options:
-  =graph_link_to "week"
-  =graph_link_to "month"
-  =graph_link_to "year"
-  =graph_link_to "previous week"
-  =graph_link_to "previous month"
-  =graph_link_to "previous year"
-  
-= bar_chart(@data, @options)
+// TODO: Form
+= form_tag tasks_graph_index_url,method: :get do
+  = label_tag :period, "Timeframe" 
+  = select_tag :period, options_for(%w{current previous})
+  = label_tag :option, "Range"
+  = select_tag :option, options_for(%w{week month year})
+  = label_tag :type, "Chart Type"
+  = select_tag :type, options_for(%w{bar line pie doughnut})
+  = submit_tag "Update"
+
+= public_send("#{@type}_chart", @data, @options)
 

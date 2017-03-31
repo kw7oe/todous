@@ -23,6 +23,7 @@ However, in this project, there's a few things I wish to practice. I have always
 - [X] Beautiful and Clean UI. _(Beauty is subjective)_
 - [ ] Proper error Handling.
 - [X] Add in Pagination for viewing tasks.
+- [ ] Improve UI for User Profile.
 
 ## Resources
 

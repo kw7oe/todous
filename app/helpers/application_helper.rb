@@ -30,9 +30,9 @@ module ApplicationHelper
     array = string.split(" ")
     option = array[0]
     period = "current"
-    if array.length == 2 
-      option = array[1]
+    if array.length == 2       
       period = array[0]
+      option = array[1]
     end
     class_name = get_class_name(option, period)
     params = {
@@ -42,6 +42,11 @@ module ApplicationHelper
     link_to tasks_graph_index_path(params) do     
       content_tag(:li, class: class_name) { title }
     end
+  end
+
+  def options_for(array)
+    array = array.map { |data| [data.titleize, data] }
+    options_for_select(array)
   end
 
   private 

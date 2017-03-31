@@ -2,6 +2,8 @@ class Tasks::GraphController < ApplicationController
   before_action :authenticate_user!
   include Tasks::GraphHelper
   
+
+  # TODO: Handle more chart
   def index
     hash = data_for(params[:option], params[:period])
     label = hash[:label]
@@ -11,7 +13,6 @@ class Tasks::GraphController < ApplicationController
         {
             label: "Tasks",
             backgroundColor: "rgba(36, 59, 85, 0.7)",
-            borderColor: "rgba(36, 59, 85, 1)",
             data: hash[:data]
         }
       ]
@@ -21,5 +22,6 @@ class Tasks::GraphController < ApplicationController
         width: 5,
         height: 3
     }
+    @type =  params[:type] || "bar"
   end
 end
