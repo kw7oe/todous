@@ -44,9 +44,9 @@ module ApplicationHelper
     end
   end
 
-  def options_for(array)
+  def options_for(array, selected)
     array = array.map { |data| [data.titleize, data] }
-    options_for_select(array)
+    options_for_select(array, selected)
   end
 
   private 

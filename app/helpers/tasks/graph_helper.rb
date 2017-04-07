@@ -1,4 +1,19 @@
 module Tasks::GraphHelper
+
+  COLORS = [
+    "#EF5350",
+    "#AB47BC",
+    "#5C6BC0",
+    "#42A5F5",
+    "#26C6DA",
+    "#26A69A",
+    "#66BB6A",
+    "#D4E157",
+    "#FFEE58",
+    "#FFA726",
+    "#FF7043",
+    "#FFAB91"
+  ]
   
   # Public API
   def data_for(option, period)
@@ -9,6 +24,13 @@ module Tasks::GraphHelper
       label: label,
       data: data
     }
+  end
+
+  def color_for(chart_type, color_length)
+    if (chart_type == "pie" || chart_type == "doughnut") && color_length == 12 
+      return COLORS
+    end
+    return COLORS[5]
   end
 
   private

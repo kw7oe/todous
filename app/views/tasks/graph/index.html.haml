@@ -1,13 +1,13 @@
 %h1 Stats
 
 // TODO: Form
-= form_tag tasks_graph_index_url,method: :get do
+= form_tag tasks_graph_index_url, method: :get do
   = label_tag :period, "Timeframe" 
-  = select_tag :period, options_for(%w{current previous})
+  = select_tag :period, options_for(%w{current previous}, params[:period])
   = label_tag :option, "Range"
-  = select_tag :option, options_for(%w{week month year})
+  = select_tag :option, options_for(%w{week month year}, params[:option])
   = label_tag :type, "Chart Type"
-  = select_tag :type, options_for(%w{bar line pie doughnut})
+  = select_tag :type, options_for(%w{bar line pie doughnut}, params[:type])
   = submit_tag "Update"
 
 = public_send("#{@type}_chart", @data, @options)

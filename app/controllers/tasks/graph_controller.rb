@@ -7,12 +7,13 @@ class Tasks::GraphController < ApplicationController
   def index
     hash = data_for(params[:option], params[:period])
     label = hash[:label]
+    colors = color_for(params[:type], label.size)
     @data = {
       labels: label,
       datasets: [
         {
             label: "Tasks",
-            backgroundColor: "rgba(36, 59, 85, 0.7)",
+            backgroundColor: colors,
             data: hash[:data]
         }
       ]
