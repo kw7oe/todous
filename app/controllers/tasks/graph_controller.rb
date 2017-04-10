@@ -2,8 +2,6 @@ class Tasks::GraphController < ApplicationController
   before_action :authenticate_user!
   include Tasks::GraphHelper
   
-
-  # TODO: Handle more chart
   def index
     hash = data_for(params[:option], params[:period])
     label = hash[:label]

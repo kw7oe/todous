@@ -25,8 +25,7 @@ module ApplicationHelper
     end
   end
 
-  def graph_link_to(string)
-    title = string.titleize
+  def graph_link_to(string, title)
     array = string.split(" ")
     option = array[0]
     period = "current"
