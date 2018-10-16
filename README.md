@@ -1,7 +1,7 @@
 ## Introduction
-To do list is a very simple web application one can made. The logic behind is pretty straightforward. 
+To do list is a very simple web application one can make. The logic behind is pretty straightforward. 
 
-However, in this project, there's a few things I wish to practice. I have always love how those productivity apps allow users to visualise their progress in graph. So, one of my primary goal in developing this application is to implement this feature.
+However, in this project, there are a few things I wish to practice. I have always loved how those productivity apps allow users to visualise their progress in graph. So, one of my primary goals in developing this application is to implement this feature.
 
 ## Features
 1. Graph _(Yes, I like graphs a lot)_
@@ -11,9 +11,9 @@ However, in this project, there's a few things I wish to practice. I have always
 	* `Tasks::GraphHelper` is responsible for handling the data required by `Chart.js`.
 2. Sidebars _(Not sure if this considered as a features)_
 
-## Limitation
+## Limitations
 * The authentication process is very basic. There is no validation whether an authentic email is used.
-* The date range of graph is only limited to current and previous week, month and year. Older history are not available in the graph view.
+* The date range of graph is only limited to current and previous week, month and year. Older history is not available in the graph view.
 
 ## To Do
 
